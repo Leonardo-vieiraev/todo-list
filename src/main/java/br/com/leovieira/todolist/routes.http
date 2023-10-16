@@ -1,0 +1,54 @@
+//Requisição HTTP do tipo POST para o endpoint http://localhost:8080/user/ => (Criação de usuário no BD)
+
+POST http://localhost:8080/user/
+Content-Type: application/json
+
+//Content-Type: application/json => indica que o corpo da solicitação está formatado como JSON. Isso é crucial para que o servidor saiba como interpretar os dados enviados no corpo da solicitação.
+
+//Corpo da requisição/Body em JSON => contém os dados que estão sendo enviados para o servidor. Criar um novo usuário com as informações passadas no Body
+{
+    "username" :"Leo",
+    "name":"Leonardo",
+    "password":"2020"
+}
+
+###
+
+//solicitação HTTP do tipo POST para o endpoint http://localhost:8080/tasks/ => (Criação de tarefas no BD)
+
+POST http://localhost:8080/tasks/
+Content-Type: application/json
+Authorization: Basic Leo:2020
+// Metodo de autenticação básico de usuário => user:password
+//Body da Requisição
+
+{
+    "description":"Tarefa 2 do Leo",
+    "title":"Tarefa 2",
+    "startAt":"2023-10-14T23:26:00",
+    "endAt":"2023-10-15T13:00:00",
+    "priority":"Baixa"
+}
+
+###
+
+GET http://localhost:8080/tasks/
+Authorization: Basic Gab:2020
+
+###
+
+PUT http://localhost:8080/tasks/d2547099-505a-438d-9ade-7f49c25effaa				
+Content-Type: application/json
+Authorization: Basic Leo:2020
+
+{
+    "description":"Tarefa",
+    "title":"ImplementarXXXXXXXXXXXXXXXXXXX",
+    "startAt":"2023-10-14T23:26:00",
+    "endAt":"2023-10-15T13:00:00",
+    "priority":"Alta"
+}
+
+###
+DELETE http://localhost:8080/tasks/d2547099-505a-438d-9ade-7f49c25effaa		
+Authorization: Basic Gab:2020
