@@ -41,7 +41,7 @@ public class FilterTaskAuth extends OncePerRequestFilter {
             // Validar usuário
             var user = this.userRepository.findByUsername(userName);
 
-            if (user == null) {                      // Se não existir este usuário no banco de dados
+            if (user == null) {                   // Se não existir este usuário no banco de dados
                 response.sendError(401);          //Retorna o erro 401
             } 
             else {                                   //Se existir
